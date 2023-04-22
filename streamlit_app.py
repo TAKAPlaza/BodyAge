@@ -30,9 +30,7 @@ def loadPickle(fileName):
 X_test = loadPickle('X_test.pickle')
 y_test = loadPickle('y_test.pickle')
 
-url = 'https://dl.dropboxusercontent.com/s/nllxeu5vtykbobr/VGG16.hdf5'
-data = urllib.request.urlopen(url)
-model = load_model(data.read())
+model = load_model('ResNet.hdf5')
 
 preds=model.predict(X_test[0:30])
 
