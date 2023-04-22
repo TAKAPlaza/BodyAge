@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import cv2
+import random
 from PIL import Image
 from glob import glob
 from sklearn.model_selection import train_test_split
