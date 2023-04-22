@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import cv2
 from PIL import Image
 from glob import glob
 from sklearn.model_selection import train_test_split
@@ -33,7 +34,7 @@ model = load_model('ResNet.hdf5')
 
 preds=model.predict(X_test[0:30])
 
-image = Image.open(X_test[0])
+image = cv2.imread(X_test[0])
 
 if predict_button:
     st.image(image, caption=preds[0],use_column_width=True)
