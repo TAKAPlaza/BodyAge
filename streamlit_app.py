@@ -46,4 +46,4 @@ if (y_test[n][0]-int(preds[n][0])>5):
     st.write("肉体年齢は年齢より若いです。")
 elif (y_test[n][0]-int(preds[n][0])<5):
     st.write("肉体年齢は年齢より高く、要注意です。")
-elif st.write("肉体年齢は年齢相応です。")
+else: st.write("肉体年齢は年齢相応です。")
