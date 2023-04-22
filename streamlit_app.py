@@ -40,7 +40,7 @@ if predict_button:
     st.image(X_test[n], use_column_width=True)
     col1, col2 = st.columns(2)
     col1.metric(label="実年齢", value=y_test[n][0])
-    col2.metric(label="肉体年齢", value=int(pred[n][0]))
+    col2.metric(label="肉体年齢", value=int(preds[n][0]))
 
 # if predict_button:
     # fig, axs = plt.subplots(3,10, figsize=(16, 6))
