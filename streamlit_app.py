@@ -37,7 +37,7 @@ preds = model.predict(X_test)
 n = random.randint(0, 127)
 
 if predict_button:
-    st.image(X_test[n], caption=n, use_column_width=True)
+    st.image(X_test[n], use_column_width=True)
     col1, col2 = st.columns(2)
     col1.metric(label="実年齢", value=y_test[n][0])
     col2.metric(label="肉体年齢", value=int(preds[n][0]))
