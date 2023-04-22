@@ -42,7 +42,7 @@ if predict_button:
     col1.metric(label="実年齢", value=y_test[n][0])
     col2.metric(label="肉体年齢", value=int(preds[n][0]))
     if (int(preds[n][0]-y_test[n][0]>5)):
-        st.subheader("肉体年齢は年齢高く、要注意です。")
+        st.subheader("肉体年齢は年齢高く、要注意です。健康増進に勤めてください。")
     elif (int(preds[n][0]-y_test[n][0]<-5)):
-        st.subheader("肉体年齢は年齢より若く、健康的です。")
-    else: st.subheader("肉体年齢は年齢相応です。")
+        st.subheader("肉体年齢は年齢より若く、健康的です。引き続き健康維持に勤めてください。")
+    else: st.subheader("肉体年齢は年齢相応です。引き続き健康維持に勤めてください。")
