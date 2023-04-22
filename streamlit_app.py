@@ -17,6 +17,7 @@ st.title("あなたの肉体年齢はいくつ？")
 col, = st.columns(1)
 predict_button = col.button('肉体年齢を計測')
 
+@st.cache
 #pickle読み書き
 def dumpPickle(fileName, obj):
     with open(fileName, mode="wb") as f:
@@ -32,13 +33,18 @@ model = load_model('ResNet.hdf5')
 
 preds=model.predict(X_test[0:30])
 
+image = Image.open(X_test[0])
+
 if predict_button:
-    fig, axs = plt.subplots(3,10, figsize=(16, 6))
-    axs = axs.flatten()
-    for true, pred, img, ax in zip(y_test, preds, X_test, axs):
-        pred = round(pred[0],1)
-        color = 'black' if abs(pred-true)<10 else 'red'
-        ax.set_title(str(true) + '--' + str(pred), color=color)
-        ax.axis('off')
-        ax.imshow(img)
-    plt.show()
+    st.image(image, caption=preds[0],use_column_width=True)
+
+# if predict_button:
+    # fig, axs = plt.subplots(3,10, figsize=(16, 6))
+    # axs = axs.flatten()
+    # for true, pred, img, ax in zip(y_test, preds, X_test, axs):
+    #     pred = round(pred[0],1)
+    #     color = 'black' if abs(pred-true)<10 else 'red'
+    #     ax.set_title(str(true) + '--' + str(pred), color=color)
+    #     ax.axis('off')
+    #     ax.imshow(img)
+    # plt.show()
