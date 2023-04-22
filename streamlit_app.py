@@ -45,4 +45,4 @@ if predict_button:
         st.markdown("<big>肉体年齢は年齢高く、要注意です。<br>健康増進に勤めてください。</big>",unsafe_allow_html=True)
     elif (int(preds[n][0]-y_test[n][0]<-5)):
         st.markdown("<big>肉体年齢は年齢より若く、健康的です。<br>引き続き健康維持に勤めてください。</big>",unsafe_allow_html=True)
-    else: st.subheader("<big>肉体年齢は年齢相応です。<br>引き続き健康維持に勤めてください。</big>",unsafe_allow_html=True)
+    else: st.markdown("<big>肉体年齢は年齢相応です。<br>引き続き健康維持に勤めてください。</big>",unsafe_allow_html=True)
