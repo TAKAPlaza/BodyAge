@@ -37,18 +37,13 @@ preds = model.predict(X_test)
 n = random.randint(0, 127)
 
 if predict_button:
-    st.image(X_test[n], use_column_width=True)
+    st.image(X_test[n], caption=n, use_column_width=True)
     col1, col2 = st.columns(2)
     col1.metric(label="実年齢", value=y_test[n][0])
     col2.metric(label="肉体年齢", value=int(preds[n][0]))
 
-# if predict_button:
-    # fig, axs = plt.subplots(3,10, figsize=(16, 6))
-    # axs = axs.flatten()
-    # for true, pred, img, ax in zip(y_test, preds, X_test, axs):
-    #     pred = round(pred[0],1)
-    #     color = 'black' if abs(pred-true)<10 else 'red'
-    #     ax.set_title(str(true) + '--' + str(pred), color=color)
-    #     ax.axis('off')
-    #     ax.imshow(img)
-    # plt.show()
+if (y_test[n][0]-int(preds[n][0])>5):
+    st.write("肉体年齢は年齢より若いです。")
+elif (y_test[n][0]-int(preds[n][0])<5):
+    st.write("肉体年齢は年齢より高く、要注意です。")
+elif st.write("肉体年齢は年齢相応です。")
