@@ -41,9 +41,8 @@ if predict_button:
     col1, col2 = st.columns(2)
     col1.metric(label="実年齢", value=y_test[n][0])
     col2.metric(label="肉体年齢", value=int(preds[n][0]))
-
-if (y_test[n][0]-int(preds[n][0])>5):
-    st.write("肉体年齢は年齢より若いです。")
-elif (y_test[n][0]-int(preds[n][0])<5):
-    st.write("肉体年齢は年齢より高く、要注意です。")
-else: st.write("肉体年齢は年齢相応です。")
+    if (int(preds[n][0]-y_test[n][0]>5):
+        st.write("肉体年齢は年齢高く、要注意です。")
+    elif (int(preds[n][0]-y_test[n][0]<-5):
+        st.write("肉体年齢は年齢より若く、健康的です。")
+    else: st.write("肉体年齢は年齢相応です。")
