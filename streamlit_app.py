@@ -39,7 +39,7 @@ n = random.randint(0, 127)
 if predict_button:
     st.image(X_test[n], use_column_width=True)
     st.markdown("あなたの実年齢は**", y_test[n][0], "**歳です")
-    st.markdown("あなたの予測年齢は**"", int(preds[n][0]), "**歳です")
+    # st.markdown("あなたの予測年齢は**"", int(preds[n][0]), "**歳です")
 
 # if predict_button:
     # fig, axs = plt.subplots(3,10, figsize=(16, 6))
