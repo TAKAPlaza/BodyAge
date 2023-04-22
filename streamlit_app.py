@@ -34,10 +34,7 @@ model = load_model('ResNet.hdf5')
 
 preds=model.predict(X_test[0:30])
 
-image = cv2.imread(X_test[0])
-
-if predict_button:
-    st.image(image, caption=preds[0],use_column_width=True)
+st.image(X_test[0], caption=preds[0],use_column_width=True)
 
 # if predict_button:
     # fig, axs = plt.subplots(3,10, figsize=(16, 6))
