@@ -38,10 +38,9 @@ n = random.randint(0, 127)
 
 if predict_button:
     st.image(X_test[n], use_column_width=True)
-    st.write("あなたの実年齢は、")
-    st.write(y_test[n[0]])
-    st.write("歳です。")
-    # st.markdown("あなたの予測年齢は**"", int(preds[n][0]), "**歳です")
+    col1, col2 = st.columns(2)
+    col1.metric(label="実年齢", value=y_test[n][0])
+    col2.metric(label="”肉体年齢", value=int(pred[n][0]))
 
 # if predict_button:
     # fig, axs = plt.subplots(3,10, figsize=(16, 6))
