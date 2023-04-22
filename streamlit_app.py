@@ -11,8 +11,6 @@ from keras.models import load_model
 
 import pickle
 
-import urllib.request
-
 st.title("あなたの肉体年齢はいくつ？")
 
 # button
