@@ -37,7 +37,6 @@ preds = model.predict(X_test)
 n = random.randint(0, 127)
 
 if predict_button:
-    st.image(Image.open('Architecture.png'), use_column_width=True)
     st.image(X_test[n], use_column_width=True)
     col1, col2 = st.columns(2)
     col1.metric(label="実年齢", value=y_test[n][0])
@@ -47,3 +46,4 @@ if predict_button:
     elif (int(preds[n][0]-y_test[n][0]<-5)):
         st.markdown("<big>肉体年齢は年齢より若く、健康的です。<br>引き続き健康維持に勤めてください。</big>",unsafe_allow_html=True)
     else: st.markdown("<big>肉体年齢は年齢相応です。<br>引き続き健康維持に勤めてください。</big>",unsafe_allow_html=True)
+    st.image(Image.open('Architecture.png'), use_column_width=True)
