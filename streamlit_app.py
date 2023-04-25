@@ -42,8 +42,8 @@ if predict_button:
     col1.metric(label="実年齢", value=y_test[n][0])
     col2.metric(label="肉体年齢", value=int(preds[n][0]))
     if (int(preds[n][0]-y_test[n][0]>5)):
-        st.markdown("<big>肉体年齢は年齢高く、要注意です。<br>健康増進に努めてください。</big>",unsafe_allow_html=True)
+        st.markdown("<big>肉体年齢は実年齢より高く、要注意です。<br>健康増進に努めてください。</big>",unsafe_allow_html=True)
     elif (int(preds[n][0]-y_test[n][0]<-5)):
-        st.markdown("<big>肉体年齢は年齢より若く、健康的です。<br>引き続き健康維持に努めてください。</big>",unsafe_allow_html=True)
+        st.markdown("<big>肉体年齢は実年齢より若く、健康的です。<br>引き続き健康維持に努めてください。</big>",unsafe_allow_html=True)
     else: st.markdown("<big>肉体年齢は年齢相応です。<br>引き続き健康維持に努めてください。</big><br><br>",unsafe_allow_html=True)
     st.image(Image.open('Architecture.png'), use_column_width=True)
